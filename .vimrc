@@ -8,8 +8,9 @@ set background=dark
 colorscheme solarized
 
 " globolal settings
-set number
 set ai
+set hlsearch
+set number
 set showmatch
 
 " Powerline
