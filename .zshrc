@@ -53,10 +53,14 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 # go path
 export PATH="$PATH:/usr/local/opt/go/libexec/bin"
-export GOPATH="$HOME/.go"
+export GOPATH="$HOME/Go"
 #nvm path
 source $(brew --prefix nvm)/nvm.sh
 export NVM_DIR="$HOME/.nvm"
+#iftop path
+export PATH="$PATH:/usr/local/Cellar/iftop/1.0pre4/sbin/"
+#google path
+export PATH="$PATH:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin"
 
 source $ZSH/oh-my-zsh.sh
 
