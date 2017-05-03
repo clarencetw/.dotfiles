@@ -45,24 +45,35 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew gem go node npm nvm osx pip urltools zsh-syntax-highlighting)
+plugins=(git aws brew gem go node npm nvm osx pip urltools zsh-syntax-highlighting zsh-autosuggestions)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
+
 # go path
 export PATH="$PATH:/usr/local/opt/go/libexec/bin"
 export GOPATH="$HOME/Go"
+
 #nvm path
 source $(brew --prefix nvm)/nvm.sh
 export NVM_DIR="$HOME/.nvm"
+
 #iftop path
 export PATH="$PATH:/usr/local/Cellar/iftop/1.0pre4/sbin/"
+
 #google path
 export PATH="$PATH:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin"
 
+#android
+export ANDROID_HOME="/usr/local/Caskroom/android-sdk/25.2.3"
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
 source $ZSH/oh-my-zsh.sh
+
+export HISTSIZE=10000000
+export SAVEHIST=10000000
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -91,3 +102,9 @@ source $ZSH/oh-my-zsh.sh
 
 # powerline
 source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/clarence/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/clarence/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/clarence/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/clarence/google-cloud-sdk/completion.zsh.inc'; fi
