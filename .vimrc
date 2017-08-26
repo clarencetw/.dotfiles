@@ -6,9 +6,10 @@ set t_Co=256
 syntax enable
 set background=dark
 colorscheme solarized
+let g:solarized_termtrans=1
 
 " globolal settings
-set ai
+" set ai
 set hlsearch
 set number
 set showmatch
