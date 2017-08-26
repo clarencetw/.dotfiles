@@ -70,6 +70,9 @@ export PATH="$PATH:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/
 export ANDROID_HOME="/usr/local/Caskroom/android-sdk/25.2.3"
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
+#laravel
+export PATH="$PATH:$HOME/.composer/vendor/bin"
+
 source $ZSH/oh-my-zsh.sh
 
 export HISTSIZE=10000000
@@ -90,6 +93,8 @@ export SAVEHIST=10000000
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+export SSH_KEY_PATH="$HOME/.ssh"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
