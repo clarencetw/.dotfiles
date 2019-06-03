@@ -45,7 +45,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git aws brew gem go node npm nvm osx pip urltools zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(gpg-agent ssh-agent git aws brew docker gem go node npm nvm osx pip python tmux urltools zsh-autosuggestions zsh-syntax-highlighting)
 
 # User configuration
 
@@ -55,6 +55,7 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 # go path
 export PATH="$PATH:/usr/local/opt/go/libexec/bin"
 export GOPATH="$HOME/Go"
+export PATH="$PATH:$HOME/Go/bin"
 
 #nvm path
 source $(brew --prefix nvm)/nvm.sh
@@ -69,17 +70,43 @@ export PATH="$PATH:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/
 #android
 export ANDROID_HOME="/usr/local/Caskroom/android-sdk/25.2.3"
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
 
 #laravel
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 
+#openssl
+export PATH="$PATH:/usr/local/opt/openssl/bin"
+export CPPFLAGS=-I/usr/local/opt/openssl/include
+export LDFLAGS=-L/usr/local/opt/openssl/lib
+
+#gpg
+export PATH="$PATH:/usr/local/MacGPG2/bin"
+
+#eks
+#export KUBECONFIG=$KUBECONFIG:~/.kube/config-odc
+#export KUBECONFIG=$KUBECONFIG:~/.kube/kubeconfig.json
+
+#ruby
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/ruby/lib"
+export CPPFLAGS="-I/usr/local/opt/ruby/include"
+export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
+
+#gems
+export PATH="$PATH:/usr/local/lib/ruby/gems/2.6.0/bin"
+
 source $ZSH/oh-my-zsh.sh
+
+#zsh-autosuggestions
+export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=10"
 
 export HISTSIZE=10000000
 export SAVEHIST=10000000
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -106,7 +133,7 @@ export SSH_KEY_PATH="$HOME/.ssh"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # powerline
-source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+source /usr/local/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/clarence/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/clarence/google-cloud-sdk/path.zsh.inc'; fi
